@@ -8,7 +8,7 @@
 import CoreMotion
 
 class MotionManager {
-  private var motionManager = CMMotionManager()
+  private var motionManager = CMHeadphoneMotionManager()
   var pitch = 0.0
   var roll = 0.0
   var yaw = 0.0
