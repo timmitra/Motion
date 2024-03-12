@@ -13,6 +13,7 @@
 		2A4E6A272B9FC31800EB0CAB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A4E6A262B9FC31800EB0CAB /* Preview Assets.xcassets */; };
 		2A4E6A2E2B9FC42400EB0CAB /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4E6A2D2B9FC42400EB0CAB /* Particle.swift */; };
 		2A4E6A302B9FC4D600EB0CAB /* ParticleSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4E6A2F2B9FC4D600EB0CAB /* ParticleSystem.swift */; };
+		2A91EAF92B9FE51400B60BF0 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A91EAF82B9FE51400B60BF0 /* MotionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		2A4E6A262B9FC31800EB0CAB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2A4E6A2D2B9FC42400EB0CAB /* Particle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
 		2A4E6A2F2B9FC4D600EB0CAB /* ParticleSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleSystem.swift; sourceTree = "<group>"; };
+		2A91EAF82B9FE51400B60BF0 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				2A4E6A1F2B9FC31500EB0CAB /* MotionApp.swift */,
 				2A4E6A212B9FC31500EB0CAB /* ContentView.swift */,
+				2A91EAF82B9FE51400B60BF0 /* MotionManager.swift */,
 				2A4E6A232B9FC31800EB0CAB /* Assets.xcassets */,
 				2A4E6A2D2B9FC42400EB0CAB /* Particle.swift */,
 				2A4E6A2F2B9FC4D600EB0CAB /* ParticleSystem.swift */,
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A4E6A302B9FC4D600EB0CAB /* ParticleSystem.swift in Sources */,
+				2A91EAF92B9FE51400B60BF0 /* MotionManager.swift in Sources */,
 				2A4E6A222B9FC31500EB0CAB /* ContentView.swift in Sources */,
 				2A4E6A2E2B9FC42400EB0CAB /* Particle.swift in Sources */,
 				2A4E6A202B9FC31500EB0CAB /* MotionApp.swift in Sources */,

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
   @State private var particleSystem = ParticleSystem() // not observable so don't need Object
+  @State private var motionHandler = MotionManager()
+  
   let options: [(flipX: Bool, flipY: Bool)] = [
     (false, false),
     (true, false),
@@ -23,7 +25,8 @@ struct ContentView: View {
           particleSystem.update(date: timelineDate)
           
           context.blendMode = .plusLighter
-          //content.addFilter(.colorMultiply(.green))
+          
+          particleSystem.center = UnitPoint(x: 0.5 + motionHandler.roll, y: 0.5 + motionHandler.pitch)
           
           for particle in particleSystem.particles {
             var contextCopy = context
