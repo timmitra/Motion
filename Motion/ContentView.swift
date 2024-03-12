@@ -9,6 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
   @State private var particleSystem = ParticleSystem() // not observable so don't need Object
+  let options: [(flipX: Bool, flipY: Bool)] = [
+    (false, false),
+    (true, false),
+    (false, true),
+    (true, true)
+  ]
   
     var body: some View {
       TimelineView(.animation) { timeline in
@@ -20,13 +26,23 @@ struct ContentView: View {
           //content.addFilter(.colorMultiply(.green))
           
           for particle in particleSystem.particles {
-            let xPos = particle.x * size.width
-            let yPos = particle.y * size.height
-            
             var contextCopy = context
             contextCopy.addFilter(.colorMultiply(Color(hue: particle.hue, saturation: 1, brightness: 1)))
             contextCopy.opacity = 1 - (timelineDate - particle.creationDate)
-            contextCopy.draw(particleSystem.image, at: CGPoint(x: xPos, y: yPos))
+
+            for option in options {
+              var xPos = particle.x * size.width
+              var yPos = particle.y * size.height
+              
+              if option.flipX {
+                xPos = size.width - xPos
+              }
+              if option.flipY {
+                yPos = size.height - yPos
+              }
+              contextCopy.draw(particleSystem.image, at: CGPoint(x: xPos, y: yPos))
+            }
+            
           }
         }
       }
