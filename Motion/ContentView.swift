@@ -12,19 +12,21 @@ struct ContentView: View {
   
     var body: some View {
       TimelineView(.animation) { timeline in
-        Canvas { content, size in
+        Canvas { context, size in
           let timelineDate = timeline.date.timeIntervalSinceReferenceDate
           particleSystem.update(date: timelineDate)
           
-          content.blendMode = .plusLighter
-          content.addFilter(.colorMultiply(.green))
+          context.blendMode = .plusLighter
+          //content.addFilter(.colorMultiply(.green))
           
           for particle in particleSystem.particles {
             let xPos = particle.x * size.width
             let yPos = particle.y * size.height
             
-            content.opacity = 1 - (timelineDate - particle.creationDate)
-            content.draw(particleSystem.image, at: CGPoint(x: xPos, y: yPos  ))
+            var contextCopy = context
+            contextCopy.addFilter(.colorMultiply(Color(hue: particle.hue, saturation: 1, brightness: 1)))
+            contextCopy.opacity = 1 - (timelineDate - particle.creationDate)
+            contextCopy.draw(particleSystem.image, at: CGPoint(x: xPos, y: yPos))
           }
         }
       }
